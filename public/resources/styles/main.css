@@ -1,0 +1,42 @@
+body{
+  box-sizing: border-box;
+  border: 0;
+  background-color: rgb(35, 1, 65);
+  background-image: url("./../images/67298_c_489_d_7_cbe_4581_f_44_ddf_83_b_0_edd_2.png");
+}
+.gameContainer{
+position: relative;
+margin : 110px 60px;
+width: 500px;
+height: 500px;
+border: 2px solid black;
+border-radius: 18px;
+background: white;
+}
+.snake-dots-1
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  background-color: #89b03d;
+}
+.snake-dots-2
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  background-color: #596e37;
+}
+
+.food
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 30px 0 #f73e41;
+  background-color: #f73e41;
+}
