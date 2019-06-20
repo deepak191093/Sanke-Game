@@ -4,39 +4,67 @@ body{
   background-color: rgb(35, 1, 65);
   background-image: url("./../images/67298_c_489_d_7_cbe_4581_f_44_ddf_83_b_0_edd_2.png");
 }
-.gameContainer{
-position: relative;
-margin : 110px 60px;
-width: 500px;
-height: 500px;
-border: 2px solid black;
-border-radius: 18px;
-background: white;
+#span-1
+{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  text-align: center;
 }
+#span-2
+{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+.gameContainer{
+  position: relative;
+  margin : 20px auto;
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: white;
+  }
 .snake-dots-1
 {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
+  width: 4%;
+  height: 4%;
   background-color: #89b03d;
+  padding: 0;
+  margin: 0;
 }
 .snake-dots-2
 {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
+  width: 4%;
+  height: 4%;
   background-color: #596e37;
+  margin: 0;
+  padding: 0;
+
 }
 
 .food
 {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 4%;
+  height: 4%;
   box-shadow: 0 0 30px 0 #f73e41;
   background-color: #f73e41;
+}
+
+.YOUR-SCORE {
+  font-family: ChangaOne;
+  font-size: 36px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
 }
