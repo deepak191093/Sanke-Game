@@ -8,7 +8,8 @@ class GameContainer extends React.Component {
     this.state = {
       foodLocation: foodGenerator(),
       snakeDots: [[0, 0], [1, 0], [2, 0]],
-      direction: "RIGHT"
+      direction: "RIGHT",
+      score: 0
     };
     this.onDirection = this.onDirection.bind(this);
     this.snakeMovement = this.snakeMovement.bind(this);
@@ -17,7 +18,7 @@ class GameContainer extends React.Component {
     this.hitItself = this.hitItself.bind(this);
     this.eatFood = this.eatFood.bind(this);
   }
-//---------------------------Life-Cycles-Method----------------------------------//
+  //---------------------------Life-Cycles-Method----------------------------------//
   componentDidMount() {
     setInterval(this.snakeMovement, 100);
     document.onkeydown = this.onDirection;
@@ -28,27 +29,25 @@ class GameContainer extends React.Component {
     this.boundry();
     this.eatFood();
   }
-//---------------------------Life-Cycles-Method----------------------------------//
+  //---------------------------Life-Cycles-Method----------------------------------//
 
-//---------------------------General-Methods------------------------------------//
+  //---------------------------General-Methods------------------------------------//
   onDirection = event => {
     event = event || window.event;
     switch (event.keyCode) {
       case 37:
-        if(this.state.direction!=="RIGHT")
+        if (this.state.direction !== "RIGHT")
           this.setState({ direction: "LEFT" });
         break;
       case 38:
-        if(this.state.direction!=="DOWN")
-        this.setState({ direction: "UP" });
+        if (this.state.direction !== "DOWN") this.setState({ direction: "UP" });
         break;
       case 39:
-        if(this.state.direction!=="LEFT")
-        this.setState({ direction: "RIGHT" });
+        if (this.state.direction !== "LEFT")
+          this.setState({ direction: "RIGHT" });
         break;
       case 40:
-        if(this.state.direction!=="UP")
-        this.setState({ direction: "DOWN" });
+        if (this.state.direction !== "UP") this.setState({ direction: "DOWN" });
         break;
     }
   };
@@ -105,11 +104,10 @@ class GameContainer extends React.Component {
     let food = this.state.foodLocation;
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     let newSnake = [...this.state.snakeDots];
-    console.log(food, "  ", head);
     if (head[0] == food[0] && head[1] == food[1]) {
       this.setState({ foodLocation: foodGenerator() });
       newSnake.unshift([]);
-      this.setState({ snakeDots: newSnake });
+      this.setState({ snakeDots: newSnake, score: ++this.state.score });
     }
   }
   //---------------------------General-Methods------------------------------------//
@@ -120,7 +118,7 @@ class GameContainer extends React.Component {
       <div>
         <span id="span-1">
           <img src="./resources/images/logo.png" id="logo" />
-          <p className="YOUR-SCORE">YOUR SCORE</p>
+          <p className="YOUR-SCORE">YOUR SCORE {this.state.score}</p>
           <div className="gameContainer">
             <Snake snakeDots={this.state.snakeDots} />
             <div

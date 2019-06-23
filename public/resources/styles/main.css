@@ -58,7 +58,7 @@ body{
 }
 
 .YOUR-SCORE {
-  font-family: ChangaOne;
+  font-family: 'Changa One', cursive;
   font-size: 36px;
   font-weight: normal;
   font-style: normal;
@@ -69,3 +69,178 @@ body{
   color: #ffffff;
   margin: 0;
 }
+
+.LandingPage{
+  text-align: center;
+  
+}
+.LandingPage > img
+{
+  width: 579.2px;
+  height: 241.6px;
+  object-fit: contain;
+  margin: 50px 50px auto
+}
+   
+.LandingPage > button{
+  display: block;
+  width: 349px;
+  height: 112px;
+  border-radius: 35px;  
+  box-shadow: 0 3px 30px 0 rgba(251, 82, 47, 0.56);
+  background-image: linear-gradient(to bottom, #fe5c26, #ef1b63);
+  margin: 0px auto; 
+  font-family: ChangaOne;
+  font-size: 42px;
+  line-height: 1.33;
+  color: #ffffff;
+  padding: 24px;
+  margin: 50px auto;
+  cursor: pointer;
+  }
+  .LandingPage > span{
+    
+    font-family: 'Changa One', cursive;
+    font-size: 64px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.48;
+    letter-spacing: normal;
+    text-align: center;
+    vertical-align: middle;
+    color: #ffffff;
+    margin: 100px auto;
+    cursor: pointer;
+  }
+.loginPage{
+  margin: 60px auto;
+  text-align: center;
+  font-family: 'Changa One', cursive;
+}
+.login
+  {
+  width: 500px;
+  height: 500px;
+  border-radius: 38px;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  margin: -80px auto;
+  }
+
+  .login > h1
+  {
+   
+    font-size: 48px;
+    padding: 48px;
+    margin: 0 auto;
+    
+  }
+
+ .email
+  {
+    margin: 0  auto;
+    width: 400px;
+    height: 80px;
+    border-radius: 35px;
+    border: 0;
+    background-color: #e5e5e5;
+  }
+  .email > p{
+    text-align: left;
+    letter-spacing: normal;
+    color: #000000;
+    padding: 1px 24px;
+    margin: 0;
+  }
+  .email > input{
+    background-color: #e5e5e5;
+    border: 0;
+    width: 360px;
+    height: 48px;
+    font-size: 32px;
+    font-family: 'Changa One', cursive;
+    outline: none;
+    margin: auto 30px;
+  }
+  .login> button{
+  width: 400px;
+  height: 80px;
+  border-radius: 35px;
+  background-image: linear-gradient(to bottom, #fe5c26, #ef1b63);
+  font-family: 'Changa One', cursive;
+  font-size: 42px;
+  line-height: 1.33;
+  color: #ffffff;
+  margin: 32px auto;
+  box-shadow: 0 3px 30px 0 rgba(251, 82, 47, 0.56);
+  outline: none;
+  }
+  .login > span{
+    vertical-align: top;
+  }
+
+  /* ----------------------------------------------------------------------------------------- */
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+ 
+  }
+  
+  .left {
+    left: 0;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+   
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .centered > p{
+    font-family: 'Changa One', cursive;
+    color: #ffffff;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: left;
+    margin: 0 auto;
+
+  }
+
+  .centered > p img{
+    vertical-align: top;
+  }
+  /* Style the image inside the centered container, if needed */
+  .centered >img {
+    width: 300px;
+  }
+  .centered > ul
+  {
+    font-family: 'Changa One', cursive;
+    color: #ffffff;
+    font-size: 24px;
+    vertical-align: middle;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .centered > ul > li{
+    padding: 12px;
+  }
+/* --------------------------------------------------------------------------------------------------------------- */
+  
