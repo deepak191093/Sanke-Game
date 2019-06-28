@@ -9,7 +9,9 @@ class GameContainer extends React.Component {
       foodLocation: foodGenerator(),
       snakeDots: [[0, 0], [1, 0], [2, 0]],
       direction: "RIGHT",
-      score: 0
+      count : {RIGHT: 0, LEFT : 0 , UP: 0 , DOWN :0},
+      score: 0,
+      userName: null
     };
     this.onDirection = this.onDirection.bind(this);
     this.snakeMovement = this.snakeMovement.bind(this);
@@ -19,6 +21,11 @@ class GameContainer extends React.Component {
     this.eatFood = this.eatFood.bind(this);
   }
   //---------------------------Life-Cycles-Method----------------------------------//
+  componentWillMount() {
+    let user =  localStorage.getItem("userNameEmail");
+    this.setState({ userName: user }  );
+    console.log("game continer user==" + user);
+  }
   componentDidMount() {
     setInterval(this.snakeMovement, 100);
     document.onkeydown = this.onDirection;
@@ -28,6 +35,8 @@ class GameContainer extends React.Component {
     this.hitItself();
     this.boundry();
     this.eatFood();
+    
+
   }
   //---------------------------Life-Cycles-Method----------------------------------//
 
@@ -37,17 +46,19 @@ class GameContainer extends React.Component {
     switch (event.keyCode) {
       case 37:
         if (this.state.direction !== "RIGHT")
-          this.setState({ direction: "LEFT" });
+          this.setState((prevState)=> ({ direction: "LEFT", count : {LEFT : prevState.count.LEFT +1} }));
         break;
       case 38:
-        if (this.state.direction !== "DOWN") this.setState({ direction: "UP" });
+        if (this.state.direction !== "DOWN") 
+        this.setState((prevState)=> ({ direction: "UP", count : {UP: prevState.count.UP +1} }));
         break;
       case 39:
         if (this.state.direction !== "LEFT")
-          this.setState({ direction: "RIGHT" });
+          this.setState((prevState)=>({ direction: "RIGHT",count : {RIGHT: prevState.count.RIGHT +1} } ) );
         break;
       case 40:
-        if (this.state.direction !== "UP") this.setState({ direction: "DOWN" });
+        if (this.state.direction !== "UP")
+         this.setState((prevState)=>({ direction: "DOWN",count : {DOWN: prevState.count.DOWN +1} } ));
         break;
     }
   };
@@ -82,10 +93,11 @@ class GameContainer extends React.Component {
   }
 
   onGameOver() {
-    alert("Game Over");
+    // alert("Game Over");
     this.setState({
       snakeDots: [[0, 0], [1, 0], [2, 0]],
-      direction: "RIGHT"
+      direction: "RIGHT",
+      score : 0
     });
   }
 
@@ -116,21 +128,37 @@ class GameContainer extends React.Component {
   render() {
     return (
       <div>
-        <span id="span-1">
-          <img src="./resources/images/logo.png" id="logo" />
-          <p className="YOUR-SCORE">YOUR SCORE {this.state.score}</p>
-          <div className="gameContainer">
-            <Snake snakeDots={this.state.snakeDots} />
-            <div
-              className="food"
-              style={{
-                left: `${this.state.foodLocation[0] * 20}px`,
-                top: `${this.state.foodLocation[1] * 20}px`
-              }}
-            ></div>
+        <div className="split left">
+          <div className="centered">
+            <img className = "logo"src="./resources/images/logo.png" />
+            <p className="YOUR-SCORE" style={{textAlign:"center"}}>YOUR SCORE {this.state.score}</p>
+            <div className="gameContainer">
+              <Snake snakeDots={this.state.snakeDots} />
+              <div
+                className="food"
+                style={{
+                  left: `${this.state.foodLocation[0] * 20}px`,
+                  top: `${this.state.foodLocation[1] * 20}px`
+                }}
+              ></div>
+            </div>
           </div>
-        </span>
-        <span id="span-2"></span>
+        </div>
+        <div className="split right">
+          <div className="centered">
+            <span className="userName">
+            <img className="avatar" src="./resources/images/avatar.png" />
+            <span>{this.state.userName}</span>
+            </span>
+            <p>YOUR RECENT SCORE</p>
+            <p>1. 1288550</p>
+            <p>2. 1288550</p>
+            <p>3. 1288550</p>
+            <p>4. 1288550</p>
+            <p>5. 1288550</p>
+          </div>
+                
+        </div>
       </div>
     );
   }

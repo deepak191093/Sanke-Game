@@ -4,20 +4,6 @@ body{
   background-color: rgb(35, 1, 65);
   background-image: url("./../images/67298_c_489_d_7_cbe_4581_f_44_ddf_83_b_0_edd_2.png");
 }
-#span-1
-{
-  position: absolute;
-  width: 50%;
-  height: 90%;
-  text-align: center;
-}
-#span-2
-{
-  position: absolute;
-  width: 50%;
-  height: 90%;
-  text-align: center;
-}
 .gameContainer{
   position: relative;
   margin : 10px auto;
@@ -72,7 +58,7 @@ body{
 
 .LandingPage{
   text-align: center;
-  
+  color: #ffffff;  
 }
 .LandingPage > img
 {
@@ -82,37 +68,35 @@ body{
   margin: 50px 50px auto
 }
    
-.LandingPage > button{
+.signuplink{
   display: block;
   width: 349px;
-  height: 112px;
+  height: 64px;
   border-radius: 35px;  
   box-shadow: 0 3px 30px 0 rgba(251, 82, 47, 0.56);
   background-image: linear-gradient(to bottom, #fe5c26, #ef1b63);
-  margin: 0px auto; 
-  font-family: ChangaOne;
+  font-family: 'Changa One', cursive;
+  text-decoration: none;
   font-size: 42px;
   line-height: 1.33;
-  color: #ffffff;
+  color: inherit;
   padding: 24px;
-  margin: 50px auto;
+  margin: 48px auto;
   cursor: pointer;
   }
-  .LandingPage > span{
+
+  .LandingPage > span > a{
     
     font-family: 'Changa One', cursive;
     font-size: 64px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.48;
-    letter-spacing: normal;
-    text-align: center;
-    vertical-align: middle;
     color: #ffffff;
     margin: 100px auto;
     cursor: pointer;
+    text-decoration: none;
+    
   }
+
+/* ----------------------------------------------------------------------------------------------- */
 .loginPage{
   margin: 60px auto;
   text-align: center;
@@ -210,8 +194,7 @@ body{
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-  }
+    }
   
   .centered > p{
     font-family: 'Changa One', cursive;
@@ -219,15 +202,14 @@ body{
     font-size: 40px;
     vertical-align: middle;
     text-align: left;
-    margin: 0 auto;
-
-  }
+   }
 
   .centered > p img{
     vertical-align: top;
   }
   /* Style the image inside the centered container, if needed */
-  .centered >img {
+  .logo1{
+    margin-top: 64px;
     width: 300px;
   }
   .centered > ul
@@ -242,5 +224,12 @@ body{
   .centered > ul > li{
     padding: 12px;
   }
+.logo
+{
+  width: 128px;
+}
+.userName{
+  vertical-align: middle;
+}
 /* --------------------------------------------------------------------------------------------------------------- */
   

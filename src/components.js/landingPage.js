@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
@@ -8,10 +8,12 @@ class LandingPage extends React.Component {
     return (
       <div className="LandingPage">
         <img src="./resources/images/logo@3x.png" />
-        <button>SIGN UP</button>
+        <Link to="/signup" className="signuplink">
+          SIGN UP
+        </Link>
         <span>
           <img src="./resources/images/play.png" />
-          Login To Play
+          <Link to="/login">Login To Play </Link>
         </span>
       </div>
     );
